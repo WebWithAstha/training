@@ -17,6 +17,7 @@ import ShoppingLayout from "@/components/shopping-view/layout";
 import LoadingPage from "@/components/common/loading";
 import AdminDashboard from "@/pages/admin-view/dashboard";
 import AdminProducts from "@/pages/admin-view/products";
+import ShoppingListing from "@/pages/shopping-view/listing";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -88,6 +89,8 @@ const AppRoutes = () => {
           }
         >
           <Route path="home" element={<ShoppingHome />} />
+          
+          <Route path="listing" element={<ShoppingListing />} />
       </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />

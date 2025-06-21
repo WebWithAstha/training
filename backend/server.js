@@ -10,6 +10,10 @@ dotenv.config(); // Load environment variables from .env file
 const authRouter = require('./routes/auth/auth-routes.js');
 const adminProductsRouter = require('./routes/admin/products-routes.js');
 const commonFeatureRouter = require('./routes/common/feature-routes.js');
+const shopProductsRouter = require('./routes/shop/products-routes.js');
+
+
+
 const morgan = require('morgan');
 
 const app = express();
@@ -34,6 +38,7 @@ connectDB();
 app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/common/feature", commonFeatureRouter);
+app.use("/api/shop/products", shopProductsRouter);
 
 
 const PORT = process.env.PORT || 5000;
