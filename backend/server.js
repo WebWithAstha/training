@@ -11,6 +11,7 @@ const authRouter = require('./routes/auth/auth-routes.js');
 const adminProductsRouter = require('./routes/admin/products-routes.js');
 const commonFeatureRouter = require('./routes/common/feature-routes.js');
 const shopProductsRouter = require('./routes/shop/products-routes.js');
+const shopCartRouter = require('./routes/shop/cart-routes.js');
 
 
 
@@ -39,6 +40,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/common/feature", commonFeatureRouter);
 app.use("/api/shop/products", shopProductsRouter);
+app.use("/api/shop/cart", shopCartRouter);
 
 
 const PORT = process.env.PORT || 5000;

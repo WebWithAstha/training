@@ -22,6 +22,8 @@ import { logoutUser } from "@/store/slices/auth-slice/index";
 import { useEffect, useState } from "react";
 import { Label } from "../ui/label";
 import { toast } from "sonner";
+import UserCartWrapper from "./cart-wrapper";
+import { fetchCartItems } from "../../store/slices/shop/cart-slice/index";
 
 function MenuItems() {
   const navigate = useNavigate();
@@ -70,6 +72,12 @@ function HeaderRightContent() {
   const [openCartSheet, setOpenCartSheet] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+    const { cartItems } = useSelector((state) => state.shopCart);
+ useEffect(() => {
+    dispatch(fetchCartItems(user?.id));
+  }, [dispatch]);
+
   function handleLogout() {
     dispatch(logoutUser()).then((data) => {
      if (data?.payload?.success) {
@@ -95,11 +103,18 @@ function HeaderRightContent() {
         >
           <ShoppingCart className="w-6 h-6" />
           <span className="absolute top-[-5px] right-[2px] font-bold text-sm">
-            { 0}
+            {cartItems?.items?.length || 0}
           </span>
           <span className="sr-only">User cart</span>
         </Button>
- 
+        <UserCartWrapper
+          setOpenCartSheet={setOpenCartSheet}
+          cartItems={
+            cartItems && cartItems.items && cartItems.items.length > 0
+              ? cartItems.items
+              : []
+          }
+        />
       </Sheet>
 
       <DropdownMenu>
