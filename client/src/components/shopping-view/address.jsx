@@ -27,6 +27,8 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
   const { addressList } = useSelector((state) => state.shopAddress);
 
   function handleManageAddress(event) {
+    console.log("handle address")
+    console.log("formdata ", formData)
     event.preventDefault();
 
     if (addressList.length >= 3 && currentEditedId === null) {
@@ -95,10 +97,11 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
   }
 
   useEffect(() => {
+    console.log("yo fetching")
     dispatch(fetchAllAddresses(user?.id));
   }, [dispatch]);
 
-//   console.log(addressList, "addressList");
+  // console.log(addressList, "addressList");
 
   return (
     <Card>

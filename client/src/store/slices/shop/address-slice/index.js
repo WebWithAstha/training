@@ -21,9 +21,11 @@ export const addNewAddress = createAsyncThunk(
 export const fetchAllAddresses = createAsyncThunk(
   "/addresses/fetchAllAddresses",
   async (userId) => {
+    console.log("fetching all address")
     const response = await axios.get(
       `http://localhost:5000/api/shop/address/get/${userId}`
     );
+    console.log(response)
 
     return response.data;
   }

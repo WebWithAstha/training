@@ -41,8 +41,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/common/feature", commonFeatureRouter);
 app.use("/api/shop/products", shopProductsRouter);
-app.use("/api/shop/cart", shopCartRouter);
 app.use("/api/shop/address", shopAddressRouter);
+app.use("/api/shop/cart", shopCartRouter);
 
 
 const PORT = process.env.PORT || 5000;

@@ -36,6 +36,7 @@ const addAddress = async (req, res) => {
 };
 
 const fetchAllAddress = async (req, res) => {
+  console.log("testing fetch controller")
   try {
     const { userId } = req.params;
     if (!userId) {
