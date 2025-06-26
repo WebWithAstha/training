@@ -12,6 +12,7 @@ const adminProductsRouter = require('./routes/admin/products-routes.js');
 const commonFeatureRouter = require('./routes/common/feature-routes.js');
 const shopProductsRouter = require('./routes/shop/products-routes.js');
 const shopCartRouter = require('./routes/shop/cart-routes.js');
+const shopAddressRouter = require("./routes/shop/address-routes");
 
 
 
@@ -41,6 +42,7 @@ app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/common/feature", commonFeatureRouter);
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
+app.use("/api/shop/address", shopAddressRouter);
 
 
 const PORT = process.env.PORT || 5000;

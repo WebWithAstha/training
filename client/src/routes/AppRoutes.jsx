@@ -18,6 +18,7 @@ import LoadingPage from "@/components/common/loading";
 import AdminDashboard from "@/pages/admin-view/dashboard";
 import AdminProducts from "@/pages/admin-view/products";
 import ShoppingListing from "@/pages/shopping-view/listing";
+import ShoppingAccount from "@/pages/shopping-view/account";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -91,6 +92,7 @@ const AppRoutes = () => {
           <Route path="home" element={<ShoppingHome />} />
           
           <Route path="listing" element={<ShoppingListing />} />
+          <Route path="account" element={<ShoppingAccount />} />
       </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />
