@@ -24,6 +24,7 @@ import ShoppingCheckout from "@/pages/shopping-view/checkout";
 import PaypalReturnPage from "@/pages/shopping-view/paypal-return";
 import PaymentSuccessPage from "@/pages/shopping-view/paypal-success";
 import PaymentCancel from "@/pages/shopping-view/payment-cancel";
+import SearchProducts from "@/pages/shopping-view/search";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -101,6 +102,7 @@ const AppRoutes = () => {
              <Route path="paypal-cancel" element={<PaymentCancel />} />
              <Route path="paypal-return" element={<PaypalReturnPage />} />
           <Route path="payment-success" element={<PaymentSuccessPage />} />
+          <Route path="search" element={<SearchProducts />} />
       </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />

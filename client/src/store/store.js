@@ -6,6 +6,9 @@ import shopProductsSlice from "./slices/shop/products-slice/index.js";
 import shopCartSlice from "./slices/shop/cart-slice/index.js";
 import shopAddressSlice from "./slices/shop/address-slice/index.js";
 import shopOrderSlice from "./slices/admin/order-slice/index.js";
+import shopSearchSlice from "./slices/shop/search-slice/index.js";
+import shopReviewSlice from "./slices/shop/review-slice/index.js";
+
 
 
 
@@ -18,6 +21,8 @@ const store = configureStore({
      shopCart: shopCartSlice,
      shopAddress: shopAddressSlice,
      shopOrder: shopOrderSlice,
+     shopReview: shopReviewSlice,
+     shopSearch: shopSearchSlice,
 
   },
 });
