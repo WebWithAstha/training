@@ -21,6 +21,9 @@ import ShoppingListing from "@/pages/shopping-view/listing";
 import ShoppingAccount from "@/pages/shopping-view/account";
 import AdminOrders from "@/pages/admin-view/orders";
 import ShoppingCheckout from "@/pages/shopping-view/checkout";
+import PaypalReturnPage from "@/pages/shopping-view/paypal-return";
+import PaymentSuccessPage from "@/pages/shopping-view/paypal-success";
+import PaymentCancel from "@/pages/shopping-view/payment-cancel";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -95,6 +98,9 @@ const AppRoutes = () => {
           <Route path="checkout" element={<ShoppingCheckout />} />
           <Route path="listing" element={<ShoppingListing />} />
           <Route path="account" element={<ShoppingAccount />} />
+             <Route path="paypal-cancel" element={<PaymentCancel />} />
+             <Route path="paypal-return" element={<PaypalReturnPage />} />
+          <Route path="payment-success" element={<PaymentSuccessPage />} />
       </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />
