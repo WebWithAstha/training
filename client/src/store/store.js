@@ -5,9 +5,10 @@ import commonFeatureSlice from "./slices/common/index.js";
 import shopProductsSlice from "./slices/shop/products-slice/index.js";
 import shopCartSlice from "./slices/shop/cart-slice/index.js";
 import shopAddressSlice from "./slices/shop/address-slice/index.js";
-import shopOrderSlice from "./slices/admin/order-slice/index.js";
+import shopOrderSlice from "./slices/shop/order-slice/index.js";
 import shopSearchSlice from "./slices/shop/search-slice/index.js";
 import shopReviewSlice from "./slices/shop/review-slice/index.js";
+import adminOrderSlice from "./slices/admin/order-slice/index.js";
 
 
 
@@ -23,6 +24,7 @@ const store = configureStore({
      shopOrder: shopOrderSlice,
      shopReview: shopReviewSlice,
      shopSearch: shopSearchSlice,
+     adminOrder: adminOrderSlice,
 
   },
 });

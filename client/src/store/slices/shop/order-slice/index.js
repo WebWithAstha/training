@@ -54,7 +54,7 @@ export const getOrderDetails = createAsyncThunk(
     const response = await axios.get(
       `http://localhost:5000/api/shop/order/details/${id}`
     );
-    console.log(response.data)
+    // console.log(response.data)
     return response.data;
   }
 );
@@ -73,7 +73,7 @@ const shoppingOrderSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(createNewOrder.fulfilled, (state, action) => {
-        console.log("Action",action)
+        // console.log("Action",action)
         state.isLoading = false;
         state.approvalURL = action.payload.approvalURL;
         state.orderId = action.payload.orderId;

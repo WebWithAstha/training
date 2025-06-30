@@ -42,7 +42,6 @@ function ShoppingHome() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const { user } = useSelector((state) => state.auth);
-console.log(user)
   
 
   const featureImageList = ["https://images.unsplash.com/photo-1750024774702-1fd1a377fdfb?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

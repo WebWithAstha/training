@@ -16,7 +16,7 @@ import {
   getAllOrdersByUserId,
   getOrderDetails,
   resetOrderDetails,
-} from "@/store/shop/order-slice";
+} from "@/store/slices/shop/order-slice/index.js";
 import { Badge } from "../ui/badge";
 
 function ShoppingOrders() {
@@ -37,7 +37,6 @@ function ShoppingOrders() {
     if (orderDetails !== null) setOpenDetailsDialog(true);
   }, [orderDetails]);
 
-  console.log(orderDetails, "orderDetails");
 
   return (
     <Card>

@@ -4,25 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import UserCartItemsContent from "@/components/shopping-view/cart-items-content";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-// import { createNewOrder } from "@/store/shop/order-slice";
-// createNewOrder
-import { Navigate } from "react-router-dom";
-// import { useToast } from "@/components/ui/use-toast";
 import { createNewOrder } from "@/store/slices/shop/order-slice";
 import { toast } from "sonner";
 
 function ShoppingCheckout() {
   const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
-  // const { approvalURL } = useSelector((state) => state.shopOrder);
+  const { approvalURL } = useSelector((state) => state.shopOrder);
   const [currentSelectedAddress, setCurrentSelectedAddress] = useState(null);
   const [isPaymentStart, setIsPaymemntStart] = useState(false);
   const dispatch = useDispatch();
-  const img =""
-  // const { toast } = useToast();
-  // toast
+  const img ="https://images.unsplash.com/photo-1750764484555-58d055fdd2c7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
-  console.log(currentSelectedAddress, "cartItems");
 
   const totalCartAmount =
     cartItems && cartItems.items && cartItems.items.length > 0
@@ -82,19 +75,19 @@ function ShoppingCheckout() {
       payerId: "",
     };
 
-    dispatch(createNewOrder(orderData)).then((data) => {
-      console.log(data, "sangam");
-      if (data?.payload?.success) {
-        if (data?.payload?.approvalURL) {
-          window.location.href = data?.payload?.approvalURL;
-        }
+    dispatch(createNewOrder(orderData)).then((action) => {
+     
+      if (action?.payload?.success) {
         setIsPaymemntStart(true);
       } else {
         setIsPaymemntStart(false);
       }
     });
   }
-
+  
+  if (approvalURL) {
+    window.location.href = approvalURL;
+  }
 
   return (
     <div className="flex flex-col">

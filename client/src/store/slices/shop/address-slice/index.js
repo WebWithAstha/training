@@ -25,7 +25,7 @@ export const fetchAllAddresses = createAsyncThunk(
     const response = await axios.get(
       `http://localhost:5000/api/shop/address/get/${userId}`
     );
-    console.log(response)
+    // console.log(response)
 
     return response.data;
   }
