@@ -19,6 +19,8 @@ import AdminDashboard from "@/pages/admin-view/dashboard";
 import AdminProducts from "@/pages/admin-view/products";
 import ShoppingListing from "@/pages/shopping-view/listing";
 import ShoppingAccount from "@/pages/shopping-view/account";
+import AdminOrders from "@/pages/admin-view/orders";
+import ShoppingCheckout from "@/pages/shopping-view/checkout";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -77,8 +79,8 @@ const AppRoutes = () => {
         >
            <Route path="dashboard" element={<AdminDashboard />} />
            <Route path="products" element={<AdminProducts />} />
-          {/* 
           <Route path="orders" element={<AdminOrders />} />
+          {/* 
           <Route path="features" element={<AdminFeatures />} /> */}
         </Route>
         <Route
@@ -90,7 +92,7 @@ const AppRoutes = () => {
           }
         >
           <Route path="home" element={<ShoppingHome />} />
-          
+          <Route path="checkout" element={<ShoppingCheckout />} />
           <Route path="listing" element={<ShoppingListing />} />
           <Route path="account" element={<ShoppingAccount />} />
       </Route>
